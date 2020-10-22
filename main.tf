@@ -13,7 +13,7 @@ resource "aws_instance" "sql" {
     source      = "sql.sh"
     destination = "/home/ubuntu/sql.sh"
   }
-  # Change permissions on bash script and execute from ec2-user.
+  # Change permissions for excution.
   provisioner "remote-exec" {
     inline = [
       "chmod +x /home/ubuntu/sql.sh",
@@ -21,7 +21,7 @@ resource "aws_instance" "sql" {
     ]
   }
   
-  # Login to the ec2-user with the aws key.
+  # Login with the aws key.
   connection {
     type        = "ssh"
     user        = "ubuntu"
@@ -42,7 +42,7 @@ resource "aws_instance" "wordpress" {
     source      = "wp.sh"
     destination = "/home/centos/wp.sh"
   }
-  # Change permissions on bash script and execute from ec2-user.
+  # Change permissions for excution.
   provisioner "remote-exec" {
     inline = [
       "chmod +x /home/centos/wp.sh",
@@ -50,7 +50,7 @@ resource "aws_instance" "wordpress" {
     ]
   }
   
-  # Login to the ec2-user with the aws key.
+  # Login with the aws key.
   connection {
     type        = "ssh"
     user        = "centos"
