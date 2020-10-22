@@ -7,7 +7,7 @@ variable "instancekey" {
 }
 # select the security group id replace {sg-01d28}
 variable "securitygrp" {
-    default = "sg-01d283f981734226d"
+    default = "sg-01d3f122s"
 }
 #   keypath [complete path of the key replace {mykey.pem}]
 variable "keypath" {
